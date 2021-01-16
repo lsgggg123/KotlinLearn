@@ -1,0 +1,4 @@
+class VarAndVal {
+    var name = "";
+
+}
