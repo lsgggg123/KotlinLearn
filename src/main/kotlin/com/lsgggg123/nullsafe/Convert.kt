@@ -1,4 +1,4 @@
-package com.lsgggg123.condition
+package com.lsgggg123.nullsafe
 
 import java.lang.NumberFormatException
 
