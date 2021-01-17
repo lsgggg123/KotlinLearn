@@ -8,6 +8,7 @@ package com.lsgggg123.kotlin
 fun main() {
     println(add(3,4))
     println(add2(5,3))
+    println(voidMethod(9, 1))
 }
 
 fun add(x: Int, y: Int): Int {
@@ -15,3 +16,7 @@ fun add(x: Int, y: Int): Int {
 }
 
 fun add2(x: Int, y: Int) = x + y
+
+fun voidMethod(x: Int, y: Int): Unit {
+    println("$x + $y = ${x + y}")
+}
