@@ -1,7 +1,7 @@
 package com.lsgggg123.kotlin
 
 fun main() {
-    val list = listOf<String>("a", "b", "c")
+    val list = listOf("a", "b", "c")
     for (it in list) {
         println(it)
     }
