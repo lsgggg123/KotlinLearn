@@ -1,7 +1,7 @@
 package com.lsgggg123.kotlin
 
 class NpeSafe {
-    var str: String? = "null safe";
+    var str: String? = "null safe"
 
     fun setNull() {
         str = null
@@ -16,7 +16,7 @@ class NpeSafe {
 }
 
 interface Invoice {
-    fun calculateTotal();
+    fun calculateTotal()
 }
 
 fun main() {
