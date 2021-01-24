@@ -20,6 +20,6 @@ class SubUser : User() {
     }
 
     // val 可以被 val var 覆盖  var 可以重写 var
-    // 因为 var 是变量 同时有 get set 方法 但是val是常量只有get方法
+    // 因为 var 是变量 同时有 get set 方法 但是 val 是常量只有 get 方法
     override val name: String get() = super.name + " SubUser child"
 }
