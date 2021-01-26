@@ -23,13 +23,47 @@ fun printInfo(a: AA) {
     println(a.a())
 }
 
+// 扩展方法和既有方法签名完全相同 既有函数优先级更高
+class CC {
+    fun foo() {
+        println("member")
+    }
+}
+
+fun CC.foo() {
+    println("member2")
+}
+
+fun CC.foo(i: Int) {
+    println("member3")
+}
+
+// 对可空类型扩展
+fun Any?.toString(): String {
+    return when (this) {
+        null -> {
+            "null"
+        }
+        else -> {
+            toString()
+        }
+    }
+}
+
 fun main() {
     val extension = ExtensionTest()
     println(extension.add(1,2))
     println(extension.subtract(7,2))
     println(extension.ext(3,4))
 
+    println("-----------------")
+
     // 输出都是 a
     printInfo(AA())
     printInfo(BB())
+
+    // 扩展方法和既有方法签名完全相同 既有函数优先级更高
+    println("-----------------")
+    CC().foo()
+    CC().foo(1)
 }
