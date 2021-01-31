@@ -1,5 +1,5 @@
 package com.lsgggg123.demo.kotlin.kotlin
-import com.lsgggg123.pkg.multiply
+import com.lsgggg123.demo.kotlin.pkg.multiply
 /**
  *
  * @author: lsggg
