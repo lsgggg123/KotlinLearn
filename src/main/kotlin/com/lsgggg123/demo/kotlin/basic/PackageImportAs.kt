@@ -1,4 +1,4 @@
-package com.lsgggg123.demo.kotlin.kotlin
+package com.lsgggg123.demo.kotlin.basic
 import com.lsgggg123.demo.kotlin.pkg.multiply as myMultiply
 /**
  *

@@ -1,4 +1,4 @@
-package com.lsgggg123.demo.kotlin.kotlin
+package com.lsgggg123.demo.kotlin.basic
 
 fun main() {
     val list = listOf("a", "b", "c")
