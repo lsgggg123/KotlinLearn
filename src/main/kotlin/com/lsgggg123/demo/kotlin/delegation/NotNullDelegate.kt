@@ -8,8 +8,35 @@ class MyPerson {
     var address: String by Delegates.notNull<String>()
 }
 
+class Person {
+    var age: Int by Delegates.observable(0) { prop, oldValue, newValue ->
+        println("${prop.name}, oldValue: $oldValue, newValue: $newValue")
+    }
+
+    var name: String by Delegates.vetoable("") { prop, oldValue, newValue ->
+        println("${prop.name}, oldValue: $oldValue, newValue: $newValue")
+        if (newValue == "hml") {
+            return@vetoable true
+        }
+        return@vetoable false
+    }
+}
+
 fun main() {
+    val person = Person()
+    person.age = 30
+    person.age = 40
+    println("--------------")
+
+
+    person.name = "hml"
+    println("name ${person.name}")
+    person.name = "cn"
+    println("name ${person.name}")
+    println("--------------")
+
+
     val myPerson = MyPerson()
-    // myPerson.address = "suzhou"
+    myPerson.address = "suzhou"
     println(myPerson.address)
 }
