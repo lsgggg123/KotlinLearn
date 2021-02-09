@@ -8,10 +8,9 @@ import java.nio.file.Files
  */
 fun main() {
     val splitStr = "END:VCARD\r\n"
-
     // 打开文件，按单个名片分割
     val f = File("/Users/lsgggg123/Downloads/ic.vcf")
-    val allContent = Files.readString(f.toPath())
+    val allContent = String(Files.readAllBytes(f.toPath()))
     val splitsTemp = allContent.split(splitStr)
     val splitResult = splitsTemp.dropLast(1).map { it + splitStr }.toList()
     // println(splitResult)
@@ -48,7 +47,7 @@ fun main() {
 
     // 打开文件，按单个名片分割
     val importFile = File("/Users/lsgggg123/Downloads/2020.csv")
-    val importContent = Files.readString(importFile.toPath())
+    val importContent = String(Files.readAllBytes(importFile.toPath()))
     val importList = importContent.split("\r\n")
     importList.forEach {
         run {

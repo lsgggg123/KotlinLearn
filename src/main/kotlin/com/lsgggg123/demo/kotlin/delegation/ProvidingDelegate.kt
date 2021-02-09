@@ -7,7 +7,7 @@ import kotlin.reflect.KProperty
 /*
     关于属性委托的要求
     1.对于只读属性来说（ val 标识的），委托需要提供一个 getValue 的方法，
-    该方法接收三个参数：
+    该方法接收如下参数：
     - thisRef，需要是属性拥有者相同的类型或者其父类型（对于扩展属性来说，这个类型就指的是被扩展的类型）
     - property，需要是 KProperty<*> 类型或者其父类型
     - getValue 方法需要返回与属性相同的类型或者其子类型
