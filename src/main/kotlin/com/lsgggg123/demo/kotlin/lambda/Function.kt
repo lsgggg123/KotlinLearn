@@ -18,7 +18,8 @@ class Sub : Super() {
 fun test2(a: Int = 10, b: Int) = println(a - b)
 
 // 在调用函数时，如果同时使用了位置参数与具名参数，那么所有的位置参数都必须要位于第一个具名参数之前
-//  比如说：foo(1, x = 2) 是允许的, foo(x = 1, 2)是不允许的
+// 比如说：foo(1, x = 2) 是允许的, foo(x = 1, 2) 是不允许的
+// 在 kotlin 调 java 时，不能使用具名参数语法，因为 java 编译字节码不一定会保留参数名
 fun main() {
     add()
     add(2)
