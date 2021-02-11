@@ -1,10 +1,5 @@
-package com.lsgggg123.implementation
+package com.lsgggg123.demo.kotlin.companion
 
-/**
- *
- * @author: lsggg
- * @date: 2021/1/24
- */
 // 对象声明 可以有方法和属性（和类一样）
 object ObjectDeclare {
     fun method() {
