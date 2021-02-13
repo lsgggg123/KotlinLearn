@@ -2,6 +2,7 @@ package com.lsgggg123.demo.kotlin.reflection
 
 /*
     要想访问一个类当中的成员属性，需要使用全限定名称
+    p43
  */
 fun main() {
     val values = listOf("a", "ab", "abc")

@@ -3,6 +3,9 @@ package com.lsgggg123.demo.kotlin.reflection
 import kotlin.reflect.jvm.javaField
 import kotlin.reflect.jvm.javaGetter
 
+/*
+    p44
+ */
 class T(val x: Int)
 
 fun main() {
