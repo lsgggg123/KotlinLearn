@@ -2,6 +2,7 @@ package com.lsgggg123.demo.kotlin.lambda
 
 /*
     函数组合
+    p42
  */
 fun <A, B, C> compose(f: (B) -> C, g: (A) -> B): (A) -> C {
     return { x -> f(g(x)) }
