@@ -2,6 +2,9 @@ package com.lsgggg123.demo.kotlin.reflection
 
 import kotlin.reflect.KClass
 
+/*
+    p45
+ */
 fun main() {
     val kClass1: KClass<out String> = "kotlin"::class
     val kClass2: KClass<out String> = "java"::class
