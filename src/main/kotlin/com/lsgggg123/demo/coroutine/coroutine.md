@@ -43,4 +43,4 @@
 10. CoroutineScope.launch {} 函数最常用的协程构建器，不阻塞当前线程，在后台创建一个新的协程，也可以指定协程调度器。
 11. runBlocking {} 是创建一个新的协程同时阻塞当前线程，直到协程结束。这个不应该在协程中使用，主要是为 main 函数和测试设计的。
 12. withContext {} 不会创建新的协程，在指定携程上运行挂起代码块，并挂起改协程直到代码块执行完成。 
-13. CoroutineScope.async {} 可以实现与 launch builder 一样的效果，在后台创建一个新的协程，唯一的区别是它有返回值，因为 CoroutineScope.async{} 返回的是 Deferred 类型。
+13. CoroutineScope.async {} 可以实现与 launch builder 一样的效果，在后台创建一个新的协程，唯一的区别是它有返回值，因为 CoroutineScope.async {} 返回的是 Deferred 类型。
