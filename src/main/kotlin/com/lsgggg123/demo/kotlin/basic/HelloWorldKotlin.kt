@@ -1,5 +1,5 @@
 package com.lsgggg123.demo.kotlin.basic
 
-fun main(args: Array<String>) {
+fun main() {
     println("Hello world")
 }

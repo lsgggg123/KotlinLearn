@@ -5,9 +5,9 @@ package com.lsgggg123.demo.kotlin.seal
 // 是一个抽象类, 不可实例化
 // 构造方法默认私有
 sealed class Season
-class Spring: Season()
-class Summer: Season()
-class Autumn: Season()
+object Spring : Season()
+object Summer : Season()
+object Autumn : Season()
 class Winter: Season()
 
 fun seasonMonth(season: Season) {

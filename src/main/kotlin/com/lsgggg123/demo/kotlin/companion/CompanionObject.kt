@@ -39,6 +39,6 @@ fun main() {
     MyTest.method()
     println(MyTest.a)
 
-    var v = MyTest.MyObject.javaClass
+    val v = MyTest.MyObject.javaClass
     println(v)
 }

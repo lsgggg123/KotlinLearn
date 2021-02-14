@@ -23,8 +23,8 @@ fun convert2int(arg: String): Int? {
 }
 
 fun printMultiply(a : String, b: String) {
-    var x = convert2int(a)
-    var y = convert2int(b)
+    val x = convert2int(a)
+    val y = convert2int(b)
     if (x != null && y != null) {
         println("$a x $b is ${x * y}")
     }

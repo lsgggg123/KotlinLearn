@@ -3,8 +3,8 @@ package com.lsgggg123.demo.kotlin.range
 // Range
 
 fun main() {
-    var i = 4
-    if (i in 1..5) {//1 5 闭区间
+    val i = 4
+    if (i in 1..5) { // 1 5 闭区间
         println(i)
     }
     println("-------------")

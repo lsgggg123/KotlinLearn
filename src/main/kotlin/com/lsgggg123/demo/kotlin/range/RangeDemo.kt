@@ -6,8 +6,8 @@ package com.lsgggg123.demo.kotlin.range
  * @date: 2021/1/22
  */
 fun main() {
-    var a = 5
-    var b = 10
+    val a = 5
+    val b = 10
     if (a !in 2..4) {
         println("a not in 2..4")
     }

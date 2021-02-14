@@ -15,14 +15,14 @@ fun main() {
     d = 2
 
     var x = 10
-    var y: Byte = 1
+    val y: Byte = 1
     x = y.toInt() //compile error: x = y
 
     println(x)
 
     val arr = intArrayOf(1, 2, 3)
     // arr = intArrayOf(4, 5)
-    arr.set(0, 4)
+    arr[0] = 4 // arr.set(0, 4)
     arr[1] = 5
     for (item in arr) {
         println(item)

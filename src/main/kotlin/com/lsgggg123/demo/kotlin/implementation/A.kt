@@ -17,7 +17,7 @@ open class B {
     }
 }
 
-class C : A,B() {
+class C : A, B() {
     // 这种情况下必须 override m
     override fun m() {
         println("C")

@@ -5,7 +5,7 @@ package com.lsgggg123.demo.kotlin.oop
  * @author: lsggg
  * @date: 2021/1/22
  */
-class ClassWithouBody
+class ClassWithoutBody
 
 class MyClass constructor(name: String) {
     private var name: String = name.toUpperCase()

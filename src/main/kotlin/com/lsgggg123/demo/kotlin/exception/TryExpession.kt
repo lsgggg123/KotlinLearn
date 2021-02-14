@@ -12,7 +12,7 @@ import java.lang.NumberFormatException
  */
 fun main() {
     val s = "3"
-    val  result: Int? = try {
+    val result: Int? = try {
         parseInt(s)
     } catch (ex: NumberFormatException) {
         null
