@@ -1,8 +1,6 @@
 package com.lsgggg123.demo.coroutine.create
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 /*
     被 suspend 修饰的函数叫做挂起函数 (suspending function)
@@ -14,16 +12,19 @@ import kotlinx.coroutines.runBlocking
  */
 suspend fun ioBlocking() {
     delay(4000)
-    println("io finish")
+    println("io finished, in thread: " + Thread.currentThread().name)
 }
 
 suspend fun callIO() {
-    ioBlocking()
+    withContext(Dispatchers.IO) {
+        ioBlocking()
+    }
+    println("callIO submit, continue in thread: " + Thread.currentThread().name)
 }
 
 fun main() = runBlocking {
     launch {
         callIO()
     }
-    println("runBlocking finish")
+    println("runBlocking finished, in thread: " + Thread.currentThread().name)
 }
