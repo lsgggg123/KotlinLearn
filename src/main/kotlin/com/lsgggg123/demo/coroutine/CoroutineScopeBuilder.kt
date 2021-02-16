@@ -13,7 +13,7 @@ import kotlinx.coroutines.runBlocking
     后者 (coroutineScope builder) 在等待所有子协程完成其任务是并不会阻塞当前的线程。
     而 runBlocking 会阻塞主线程，仅用于调试
 
-    runBlocking 并非挂起函数；也就是说，调用它的线程会一直位于该函数之中，直到携程执行完毕为止。
+    runBlocking 并非挂起函数；也就是说，调用它的线程会一直位于该函数之中，直到协程执行完毕为止。
     coroutineScope 是挂起函数；也就是说如果其中的协程挂起，那么 coroutineScope 函数也会挂起，
     这样创建 coroutineScope 的外层函数就可以继续在同一个线程中执行了。
     该线程会「逃离」coroutineScope 之外，并且可以做其他一些事情。

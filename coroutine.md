@@ -14,7 +14,7 @@
 
 总而言之： 
 - 协程可以简化异步编程，可以顺序的表达程序，
-- 协程也提供了一种避免阻塞线程并用更廉价、更可控的操作替代线程阻塞的方法--携程挂起
+- 协程也提供了一种避免阻塞线程并用更廉价、更可控的操作替代线程阻塞的方法--协程挂起
 
 ### 协程中的重要概念
 1. CoroutineScope，可以理解为协程本身，包含了 CoroutineContext。
@@ -26,7 +26,7 @@
     2. Dispatchers.IO
     3. Dispatchers.Main
     4. Dispatchers.Unconfined，Unconfined 就是不指定线程
-6. launch 函数定义，如果不指定 CoroutineDispatcher 或者没有其他的 ContinuationInterceptor，默认的携程调度器就是 Dispatchers.Default，Default 是一个协程调度器，其指定的线程为共有的线程池，线程数量至少为 2，最大与 CPU 数相同。
+6. launch 函数定义，如果不指定 CoroutineDispatcher 或者没有其他的 ContinuationInterceptor，默认的协程调度器就是 Dispatchers.Default，Default 是一个协程调度器，其指定的线程为共有的线程池，线程数量至少为 2，最大与 CPU 数相同。
 7. Job，任务，封装了协程中需要执行的代码逻辑。Job可以取消并且有简单的生命周期，它有六种状态: New -> Active -> Completing -> Cancelling -> Cancelled -> Completed，Job 完成时是没有返回值的，如果需要返回值的话，应该使用 Deferred，它是 Job 的子类。
 
    |State|[isActive]|[isCompleted]|[isCanceled]|
@@ -39,8 +39,8 @@
    |Completed|false|true|false|
 
 8. Deferred，延期的， public interface Deferred<out T> : Job
-9. Coroutine Builders：协程构建器，除了 CoroutineScope.launch 函数外，Kotlin 还有其他几种 Builders，负责创建携程。
+9. Coroutine Builders：协程构建器，除了 CoroutineScope.launch 函数外，Kotlin 还有其他几种 Builders，负责创建协程。
 10. CoroutineScope.launch {} 函数最常用的协程构建器，不阻塞当前线程，在后台创建一个新的协程，也可以指定协程调度器。
 11. runBlocking {} 是创建一个新的协程同时阻塞当前线程，直到协程结束。这个不应该在协程中使用，主要是为 main 函数和测试设计的。
-12. withContext {} 不会创建新的协程，在指定携程上运行挂起代码块，并挂起改协程直到代码块执行完成。 
+12. withContext {} 不会创建新的协程，在指定协程上运行挂起代码块，并挂起改协程直到代码块执行完成。 
 13. CoroutineScope.async {} 可以实现与 launch builder 一样的效果，在后台创建一个新的协程，唯一的区别是它有返回值，因为 CoroutineScope.async {} 返回的是 Deferred 类型。
