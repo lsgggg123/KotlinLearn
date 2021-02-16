@@ -9,6 +9,8 @@ import kotlinx.coroutines.runBlocking
 
     挂起函数可以像普通函数一样用在协程当中，不过它拥有自己的一些特性：可以使用其他的挂起函数。
     重点：挂起函数只能用在协程或者另外一个挂起函数当中。
+
+    刮起函数不执行完，是不能执行后面的代码的!
  */
 suspend fun ioBlocking() {
     delay(4000)
