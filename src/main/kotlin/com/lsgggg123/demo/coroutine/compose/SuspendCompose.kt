@@ -8,11 +8,13 @@ import kotlin.system.measureTimeMillis
  */
 suspend fun suspend1(): Int {
     delay(2000)
+    println("suspend1 execute in thread: ${Thread.currentThread().name}")
     return 15
 }
 
 suspend fun suspend2(): Int {
     delay(3000)
+    println("suspend2 execute in thread: ${Thread.currentThread().name}")
     return 20
 }
 
