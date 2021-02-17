@@ -18,8 +18,8 @@ import java.util.concurrent.Executors
 
     程序分析：
     1. 当通过 launch 来启动协程并且不指定协程分发器时，它会继承启动它的那个 CoroutineScope 的上下文与分发器对于该示例来说，它会继承 runBlocking 的上下文，而 runBlocking 则是运行在 main 线程当中。
-    2. Dispatchers.Unconfined 是一种很特殊的协程分发器，它在该示例中也是运行在 main 线程中，但实际上，其运行机制与不指定协程分发器时是完全不同的。
-    3. Dispatchers.Default 是默认的分发器，当协程是通过 GlobalScope 来启动的时候，它会使用改默认的分发器来启动协程，它会使用一个后台的共享线程池来运行我们的协程代码。因此，launch(Dispatchers.Default) 等价于 GlobalScope.launch {}
+    2. Dispatchers.Unconfined 是一种很特殊的协程分发器，它在该示例中也是运行在 main 线程中，但实际上，其运行机制与不指定协程分发器时是完全不同的。启动协程是在当前线程，挂起恢复后可能在任意线程。
+    3. Dispatchers.Default 是默认的分发器，当协程是通过 GlobalScope 来启动的时候，它会使用该默认的分发器来启动协程，是一个后台的共享线程池来运行我们的协程代码。因此，launch(Dispatchers.Default) 等价于 GlobalScope.launch {}
     4. ThreadExecutors 创建一个线程池，改线程池中的线程用来执行我们所制定的协程代码；在实际开发中，使用专门的线程来执行协程代码的代价是非常高的，因此在协程代码执行完毕后，我们必须要释放相应的资源，这里就需要使用 close 方法来关闭相应的协程分发器，从而释放掉资源；也可以将该协程分发器存储到一个顶层变量中，以便在程序的其它地方进行复用。
  */
 
@@ -28,11 +28,11 @@ fun main() = runBlocking<Unit> {
         println("no params   ,thread: ${Thread.currentThread().name}")
     }
 
-    //launch声明的参数没有Dispatchers，但是传了个Dispatchers做参数
-    //CoroutineDispatchers间接实现了CoroutineContext
+    // launch 声明的参数没有 Dispatchers，但是传了个 Dispatchers 做参数
+    // CoroutineDispatchers 间接实现了 CoroutineContext
     launch(Dispatchers.Unconfined) {
         println("Dispatchers.Unconfined   ,thread: ${Thread.currentThread().name}")
-        //delay方法加或者不加 加在前面或者后面都会影响执行的线程
+        // delay 方法加或者不加 加在前面或者后面都会影响执行的线程
         delay(100)
     }
 
